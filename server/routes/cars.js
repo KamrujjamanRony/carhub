@@ -6,6 +6,41 @@ const { Op } = require('sequelize');
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Cars
+ *   description: Car management endpoints
+ */
+
+/**
+ * @swagger
+ * /api/cars:
+ *   get:
+ *     tags: [Cars]
+ *     summary: List available cars with optional filters
+ *     parameters:
+ *       - in: query
+ *         name: brand
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: model
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: minPrice
+ *         schema:
+ *           type: number
+ *       - in: query
+ *         name: maxPrice
+ *         schema:
+ *           type: number
+ *     responses:
+ *       200:
+ *         description: A list of cars
+ */
+
 // Get all cars with filters
 router.get('/', async (req, res) => {
   try {
@@ -28,19 +63,19 @@ router.get('/', async (req, res) => {
     // Build filter query
     if (brand) where.brand = { [Op.like]: `%${brand}%` };
     if (model) where.model = { [Op.like]: `%${model}%` };
-    
+
     if (minPrice || maxPrice) {
       where.price = {};
       if (minPrice) where.price[Op.gte] = parseFloat(minPrice);
       if (maxPrice) where.price[Op.lte] = parseFloat(maxPrice);
     }
-    
+
     if (minYear || maxYear) {
       where.year = {};
       if (minYear) where.year[Op.gte] = parseInt(minYear);
       if (maxYear) where.year[Op.lte] = parseInt(maxYear);
     }
-    
+
     if (fuelType) where.fuelType = fuelType;
     if (transmission) where.transmission = transmission;
     if (location) where['$location.city$'] = { [Op.like]: `%${location}%` };
@@ -69,6 +104,24 @@ router.get('/', async (req, res) => {
 });
 
 // Get single car
+/**
+ * @swagger
+ * /api/cars/{id}:
+ *   get:
+ *     tags: [Cars]
+ *     summary: Get a single car by ID
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Car details returned successfully
+ *       404:
+ *         description: Car not found
+ */
 router.get('/:id', async (req, res) => {
   try {
     const car = await Car.findByPk(req.params.id, {
@@ -121,10 +174,10 @@ router.post('/', auth, async (req, res) => {
 router.post('/compare', async (req, res) => {
   try {
     const { carIds } = req.body;
-    
+
     if (!carIds || carIds.length < 2 || carIds.length > 4) {
-      return res.status(400).json({ 
-        message: 'Please provide 2 to 4 car IDs for comparison' 
+      return res.status(400).json({
+        message: 'Please provide 2 to 4 car IDs for comparison'
       });
     }
 

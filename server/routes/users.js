@@ -5,6 +5,28 @@ const auth = require('../middleware/auth');
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Users
+ *   description: User profile and account management
+ */
+
+/**
+ * @swagger
+ * /api/users/profile:
+ *   get:
+ *     tags: [Users]
+ *     summary: Get current user profile
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: User profile returned successfully
+ *       401:
+ *         description: Unauthorized
+ */
+
 // Get user profile
 router.get('/profile', auth, async (req, res) => {
   try {
@@ -21,10 +43,10 @@ router.get('/profile', auth, async (req, res) => {
 router.put('/profile', auth, async (req, res) => {
   try {
     const { name, phone, address, dealerInfo } = req.body;
-    
+
     const user = await User.findByPk(req.user.id);
     await user.update({
-      name, 
+      name,
       phone,
       ...(req.user.role === 'dealer' && { dealerInfo })
     });
@@ -69,7 +91,7 @@ router.patch('/role', auth, async (req, res) => {
     }
 
     const { userId, role } = req.body;
-    
+
     if (!['buyer', 'seller', 'dealer', 'admin'].includes(role)) {
       return res.status(400).json({ message: 'Invalid role' });
     }

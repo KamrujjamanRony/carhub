@@ -1,8 +1,8 @@
 // environment.ts
 export const environment = {
     production: false,
-    apiUrl: 'http://s.supersoftbd.com/api',
-    authUrl: 'http://s.supersoftbd.com/HWS',
+    apiUrl: 'http://localhost:5000/api',
+    authUrl: 'http://localhost:5000/HWS',
     siteId: 1,
     apiKey: "AIzaSyAFJCGAbWU3TJmmo1BJBSnnlwUin68wYvo",
     authDomain: "super-cart-80b68.firebaseapp.com",

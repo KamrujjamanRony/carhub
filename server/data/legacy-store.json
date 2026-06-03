@@ -1,0 +1,626 @@
+{
+  "siteSettings": [
+    {
+      "id": 1,
+      "companyName": "CarHub",
+      "contactPhone": "+8801700000000",
+      "address1": "House 12, Road 7, Dhanmondi, Dhaka",
+      "address2": "Support Center, Agrabad, Chattogram",
+      "socialLinks": {
+        "facebook": "https://facebook.com/carhubbd",
+        "twitter": "https://twitter.com/carhubbd",
+        "instagram": "https://instagram.com/carhubbd",
+        "linkedin": "https://linkedin.com/company/carhubbd"
+      },
+      "deliveryCharges": [
+        {
+          "name": "Inside Dhaka",
+          "amount": 120,
+          "isActive": true
+        },
+        {
+          "name": "Outside Dhaka",
+          "amount": 220,
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "SUV",
+      "image": "/assets/images/category/category-1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Sedan",
+      "image": "/assets/images/category/category-2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Electric",
+      "image": "/assets/images/category/category-3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Hybrid",
+      "image": "/assets/images/category/category-4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Premium",
+      "image": "/assets/images/category/category-5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Pickup",
+      "image": "/assets/images/category/category-6.jpg"
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Toyota"
+    },
+    {
+      "id": 2,
+      "name": "Honda"
+    },
+    {
+      "id": 3,
+      "name": "Nissan"
+    },
+    {
+      "id": 4,
+      "name": "BMW"
+    },
+    {
+      "id": 5,
+      "name": "Hyundai"
+    },
+    {
+      "id": 6,
+      "name": "Mitsubishi"
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "menuName": "Dashboard",
+      "route": "/admin",
+      "isSelected": false,
+      "collapsed": false,
+      "permissionsKey": [
+        {
+          "permission": "View",
+          "isSelected": false
+        }
+      ],
+      "children": [
+        {
+          "id": 2,
+          "menuName": "Products",
+          "route": "/admin/products",
+          "isSelected": false,
+          "collapsed": true,
+          "permissionsKey": [
+            {
+              "permission": "Create",
+              "isSelected": false
+            },
+            {
+              "permission": "Update",
+              "isSelected": false
+            },
+            {
+              "permission": "Delete",
+              "isSelected": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 3,
+          "menuName": "Orders",
+          "route": "/admin/orders",
+          "isSelected": false,
+          "collapsed": true,
+          "permissionsKey": [
+            {
+              "permission": "View",
+              "isSelected": false
+            },
+            {
+              "permission": "Manage Status",
+              "isSelected": false
+            }
+          ],
+          "children": []
+        },
+        {
+          "id": 4,
+          "menuName": "Users",
+          "route": "/admin/users",
+          "isSelected": false,
+          "collapsed": true,
+          "permissionsKey": [
+            {
+              "permission": "View",
+              "isSelected": false
+            },
+            {
+              "permission": "Edit",
+              "isSelected": false
+            }
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Sagor Admin",
+      "email": "sagor@gmail.com",
+      "password": "12345",
+      "role": "admin",
+      "phone": "+8801700123456"
+    },
+    {
+      "id": 2,
+      "name": "Operations Manager",
+      "email": "ops@carhub.test",
+      "password": "12345",
+      "role": "manager",
+      "phone": "+8801700999999"
+    }
+  ],
+  "ecommerceUsers": [
+    {
+      "id": 1,
+      "userId": "demo-user-1",
+      "email": "demo.user@carhub.test",
+      "username": "demo.user",
+      "role": "user",
+      "fullname": "Demo User",
+      "photoURL": "",
+      "address": [
+        {
+          "id": "addr-1",
+          "district": "Dhaka",
+          "city": "Dhanmondi",
+          "street": "House 12, Road 7",
+          "contact": "+8801700000001",
+          "type": "Home",
+          "isDefault": true,
+          "userId": "demo-user-1"
+        }
+      ],
+      "gender": "",
+      "dob": "1997-12-08",
+      "phoneNumber": "+8801700000001"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Toyota Corolla Cross Hybrid 2024",
+      "shortDescription": "Efficient hybrid SUV with premium comfort and active safety.",
+      "description": "A city-friendly hybrid crossover with strong fuel economy, smooth driving dynamics, and a spacious cabin suited for everyday driving and long trips.",
+      "regularPrice": 4990000,
+      "offerPrice": 4850000,
+      "brand": "Toyota",
+      "category": "SUV",
+      "sku": "TY-CCROSS-24",
+      "availability": "In stock",
+      "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 4,
+      "sizes": [],
+      "colors": ["Pearl White", "Jet Black", "Silver"],
+      "specifications": [
+        {
+          "title": "Performance",
+          "content": [
+            {
+              "item": "Engine",
+              "value": "1.8L Hybrid"
+            },
+            {
+              "item": "Transmission",
+              "value": "e-CVT"
+            },
+            {
+              "item": "Fuel Economy",
+              "value": "23 km/l"
+            }
+          ]
+        },
+        {
+          "title": "Features",
+          "content": [
+            {
+              "item": "Seats",
+              "value": "5"
+            },
+            {
+              "item": "Infotainment",
+              "value": "9 inch touchscreen"
+            },
+            {
+              "item": "Safety",
+              "value": "Toyota Safety Sense"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Hybrid drivetrain. Adaptive cruise control. Lane tracing assist. Excellent resale value.",
+      "relatedProducts": [2, 5, 6],
+      "ratings": [],
+      "facebookPost": "https://facebook.com/carhubbd",
+      "youtubeLink": "https://youtube.com",
+      "twitterTweet": "https://twitter.com/carhubbd",
+      "instagramPost": "https://instagram.com/carhubbd"
+    },
+    {
+      "id": 2,
+      "name": "Honda Civic RS Turbo 2023",
+      "shortDescription": "Sporty sedan with sharp handling and turbocharged performance.",
+      "description": "The Civic RS brings a driver-focused interior, turbo power, and a refined ride. It is ideal for buyers who want comfort without losing excitement behind the wheel.",
+      "regularPrice": 4650000,
+      "offerPrice": 4520000,
+      "brand": "Honda",
+      "category": "Sedan",
+      "sku": "HN-CIVIC-RS23",
+      "availability": "In stock",
+      "image": "https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 3,
+      "sizes": [],
+      "colors": ["Radiant Red", "Modern Steel", "White Orchid"],
+      "specifications": [
+        {
+          "title": "Performance",
+          "content": [
+            {
+              "item": "Engine",
+              "value": "1.5L Turbo"
+            },
+            {
+              "item": "Horsepower",
+              "value": "180 hp"
+            },
+            {
+              "item": "Transmission",
+              "value": "CVT"
+            }
+          ]
+        },
+        {
+          "title": "Features",
+          "content": [
+            {
+              "item": "Interior",
+              "value": "Leather trimmed"
+            },
+            {
+              "item": "Display",
+              "value": "10.2 inch digital cluster"
+            },
+            {
+              "item": "Audio",
+              "value": "8 speaker sound system"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Turbocharged acceleration. Sport seats. Advanced infotainment and safety package.",
+      "relatedProducts": [1, 4, 5],
+      "ratings": []
+    },
+    {
+      "id": 3,
+      "name": "Nissan Leaf N-Connecta 2024",
+      "shortDescription": "Fully electric hatchback with practical range and quiet cabin.",
+      "description": "An accessible EV with low running costs, regenerative braking, and a comfortable ride. Ideal for urban driving and daily commuting.",
+      "regularPrice": 3890000,
+      "offerPrice": 3740000,
+      "brand": "Nissan",
+      "category": "Electric",
+      "sku": "NS-LEAF-24",
+      "availability": "In stock",
+      "image": "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 5,
+      "sizes": [],
+      "colors": ["Ocean Blue", "Gun Metallic"],
+      "specifications": [
+        {
+          "title": "Battery",
+          "content": [
+            {
+              "item": "Capacity",
+              "value": "40 kWh"
+            },
+            {
+              "item": "Range",
+              "value": "270 km"
+            },
+            {
+              "item": "Charging",
+              "value": "Fast charging supported"
+            }
+          ]
+        },
+        {
+          "title": "Comfort",
+          "content": [
+            {
+              "item": "Cabin",
+              "value": "Silent EV cabin"
+            },
+            {
+              "item": "Seats",
+              "value": "5"
+            },
+            {
+              "item": "Assist",
+              "value": "e-Pedal driving"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Electric mobility with low maintenance. Great fit for daily commuting and city use.",
+      "relatedProducts": [1, 5],
+      "ratings": []
+    },
+    {
+      "id": 4,
+      "name": "BMW X5 xDrive40i 2023",
+      "shortDescription": "Luxury SUV with commanding performance and premium features.",
+      "description": "A refined premium SUV offering balanced power, upscale interior materials, and long-distance comfort for families or executives.",
+      "regularPrice": 12900000,
+      "offerPrice": 12450000,
+      "brand": "BMW",
+      "category": "Premium",
+      "sku": "BMW-X5-40I",
+      "availability": "Limited stock",
+      "image": "https://images.unsplash.com/photo-1556189250-72ba954cfc2b?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 2,
+      "sizes": [],
+      "colors": ["Mineral White", "Carbon Black"],
+      "specifications": [
+        {
+          "title": "Powertrain",
+          "content": [
+            {
+              "item": "Engine",
+              "value": "3.0L TwinPower Turbo"
+            },
+            {
+              "item": "Horsepower",
+              "value": "335 hp"
+            },
+            {
+              "item": "Drive",
+              "value": "xDrive AWD"
+            }
+          ]
+        },
+        {
+          "title": "Luxury",
+          "content": [
+            {
+              "item": "Display",
+              "value": "Curved BMW display"
+            },
+            {
+              "item": "Audio",
+              "value": "Harman Kardon"
+            },
+            {
+              "item": "Seats",
+              "value": "Heated front seats"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Premium ride quality, luxury interior, advanced driver assists, and powerful straight-six performance.",
+      "relatedProducts": [1, 2, 5],
+      "ratings": []
+    },
+    {
+      "id": 5,
+      "name": "Hyundai Tucson Signature 2024",
+      "shortDescription": "Modern SUV with practical space and upscale cabin layout.",
+      "description": "The Tucson Signature combines bold styling, a roomy interior, and efficient performance, making it an excellent family-focused SUV.",
+      "regularPrice": 5250000,
+      "offerPrice": 5090000,
+      "brand": "Hyundai",
+      "category": "SUV",
+      "sku": "HY-TUCSON-24",
+      "availability": "In stock",
+      "image": "https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 4,
+      "sizes": [],
+      "colors": ["Phantom Black", "Amazon Gray"],
+      "specifications": [
+        {
+          "title": "Performance",
+          "content": [
+            {
+              "item": "Engine",
+              "value": "2.0L Petrol"
+            },
+            {
+              "item": "Transmission",
+              "value": "6 speed automatic"
+            },
+            {
+              "item": "Drive Modes",
+              "value": "Eco, Comfort, Sport"
+            }
+          ]
+        },
+        {
+          "title": "Convenience",
+          "content": [
+            {
+              "item": "Boot Space",
+              "value": "620 liters"
+            },
+            {
+              "item": "Camera",
+              "value": "360 degree view"
+            },
+            {
+              "item": "Climate",
+              "value": "Dual zone"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Excellent practicality, distinctive exterior design, and a feature-rich interior package.",
+      "relatedProducts": [1, 2, 3, 6],
+      "ratings": []
+    },
+    {
+      "id": 6,
+      "name": "Mitsubishi L200 Triton 2023",
+      "shortDescription": "Hard-working pickup with strong load capacity and rugged presence.",
+      "description": "A durable pickup designed for both commercial use and lifestyle travel, with dependable power delivery and practical utility.",
+      "regularPrice": 4350000,
+      "offerPrice": 4210000,
+      "brand": "Mitsubishi",
+      "category": "Pickup",
+      "sku": "MI-L200-23",
+      "availability": "In stock",
+      "image": "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1200&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1200&q=80"
+      ],
+      "quantity": 6,
+      "sizes": [],
+      "colors": ["Graphite Gray", "White Diamond"],
+      "specifications": [
+        {
+          "title": "Utility",
+          "content": [
+            {
+              "item": "Engine",
+              "value": "2.4L Diesel"
+            },
+            {
+              "item": "Drive",
+              "value": "4WD"
+            },
+            {
+              "item": "Payload",
+              "value": "Over 1 ton"
+            }
+          ]
+        },
+        {
+          "title": "Durability",
+          "content": [
+            {
+              "item": "Ground Clearance",
+              "value": "220 mm"
+            },
+            {
+              "item": "Cabin",
+              "value": "Double cab"
+            },
+            {
+              "item": "Use Case",
+              "value": "Commercial and family use"
+            }
+          ]
+        }
+      ],
+      "productDetails": "Rugged, capable, and practical for both work and weekend travel.",
+      "relatedProducts": [1, 5],
+      "ratings": []
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "userId": "test-user-compat",
+      "products": [
+        {
+          "id": "cart-item-1",
+          "productId": 1,
+          "quantity": 2
+        }
+      ]
+    }
+  ],
+  "wishlists": [
+    {
+      "id": 1,
+      "userId": "test-user-compat",
+      "products": [
+        {
+          "id": "wish-item-1",
+          "productId": 2
+        }
+      ]
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": "test-user-compat",
+      "userEmail": "compat@test.com",
+      "userName": "Compat User",
+      "userPhone": "+8801700001111",
+      "orderItems": [
+        {
+          "id": 1,
+          "productId": 1,
+          "productName": "Toyota Corolla Cross Hybrid 2024",
+          "quantity": 1,
+          "price": 4850000,
+          "size": "",
+          "color": "",
+          "image": "https://example.com/car.jpg"
+        }
+      ],
+      "subtotal": 4850000,
+      "deliveryCharge": 120,
+      "totalAmount": 4850120,
+      "paymentMethod": "Cash on Delivery",
+      "orderStatus": 0,
+      "shippingAddress": {
+        "district": "Dhaka",
+        "city": "Dhanmondi",
+        "street": "House 12",
+        "contact": "+8801700001111",
+        "type": "Home"
+      },
+      "orderDate": "2026-06-03T19:30:51.568Z",
+      "deliveredDate": null
+    }
+  ]
+}

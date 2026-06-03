@@ -26,7 +26,7 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      len: [6, 100]
+      len: [5, 100]
     }
   },
   role: {
@@ -66,7 +66,7 @@ const User = sequelize.define('User', {
   }
 });
 
-User.prototype.correctPassword = async function(candidatePassword) {
+User.prototype.correctPassword = async function (candidatePassword) {
   return await bcrypt.compare(candidatePassword, this.password);
 };
 

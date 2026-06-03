@@ -2,10 +2,45 @@ const express = require('express');
 const { Sequelize } = require('sequelize');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const swaggerUi = require('swagger-ui-express');
+const swaggerJsdoc = require('swagger-jsdoc');
 
 dotenv.config();
 
+const PORT = process.env.PORT || 5000;
+
 const app = express();
+
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.0',
+    info: {
+      title: 'CarHub API',
+      version: '1.0.0',
+      description: 'API documentation for the CarHub backend'
+    },
+    servers: [
+      {
+        url: `http://localhost:${PORT}`
+      }
+    ],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT'
+        }
+      }
+    }
+  },
+  apis: ['./routes/*.js']
+};
+
+const swaggerSpec = swaggerJsdoc(swaggerOptions);
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.get('/api-docs.json', (req, res) => res.json(swaggerSpec));
 
 // Middleware
 app.use(cors());
@@ -47,6 +82,7 @@ app.get('/', (req, res) => {
 });
 
 // API Routes
+app.use('/api', require('./routes/legacy'));
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/cars', require('./routes/cars'));
 app.use('/api/users', require('./routes/users'));
@@ -79,7 +115,6 @@ sequelize.sync({ force: false })
     console.error('Database sync error:', err);
   });
 
-const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`API available at http://localhost:${PORT}/api`);

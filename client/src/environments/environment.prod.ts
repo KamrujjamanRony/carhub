@@ -1,8 +1,8 @@
 // environment.prod.ts
 export const environment = {
     production: true,
-    apiUrl: 'http://supersoft:81/api',
-    authUrl: 'http://supersoft:81/HWS',
+    apiUrl: 'http://localhost:5000/api',
+    authUrl: 'http://localhost:5000/HWS',
     siteId: 1,
     apiKey: "AIzaSyAFJCGAbWU3TJmmo1BJBSnnlwUin68wYvo",
     authDomain: "carhub-80b68.firebaseapp.com",
