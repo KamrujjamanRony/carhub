@@ -1,0 +1,129 @@
+<div class="max-w-6xl mx-auto px-4 py-8">
+  <!-- Header Section -->
+  <div class="text-center mb-12">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">
+      About {{ siteInfo()?.companyName }}
+    </h1>
+    <p class="text-xl text-gray-600">
+      Your trusted e-commerce partner in Bangladesh
+    </p>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="grid gap-8">
+    <!-- About Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Our Story</h2>
+      <div class="space-y-4 text-gray-700">
+        <p>
+          Welcome to {{ siteInfo()?.companyName }}, your premier destination for
+          online shopping in Bangladesh. We started with a simple mission: to
+          provide high-quality products with exceptional service to our
+          customers.
+        </p>
+        <p>
+          Since our founding, we've grown into one of the most trusted
+          e-commerce platforms in the country, serving thousands of satisfied
+          customers every day.
+        </p>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Contact Us</h2>
+      <div class="space-y-2 text-gray-700">
+        <p class="flex items-center gap-2">
+          <i class="pi pi-phone"></i> {{ siteInfo()?.contactPhone }}
+        </p>
+        <p class="flex items-center gap-2">
+          <i class="pi pi-map-marker"></i> {{ siteInfo()?.address1 }}
+        </p>
+        @if (siteInfo()?.address2) {
+        <p class="flex items-center gap-2">
+          <i class="pi pi-map-marker"></i> {{ siteInfo()?.address2 }}
+        </p>
+        }
+      </div>
+    </div>
+
+    <!-- Delivery Section -->
+    @if (siteInfo()?.deliveryCharges?.length) {
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">
+        Delivery Information
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        @for (option of siteInfo()?.deliveryCharges; track $index) {
+          <div
+          class="border border-gray-200 p-4 rounded-lg"
+        >
+          <h3 class="font-medium text-lg text-gray-800 mb-2">
+            {{ option.name }}
+          </h3>
+          @if (option.amount > 0) {
+          <p class="text-gray-700">Delivery Charge: {{ option.amount }} BDT</p>
+          } @if (option.amount === 0) {
+          <p class="text-green-600 font-medium">Free Delivery</p>
+          }
+
+          <p
+            class="text-sm mt-2"
+            [ngClass]="{
+              'text-green-600': option.isActive,
+              'text-red-600': !option.isActive
+            }"
+          >
+            Status:
+            {{ option.isActive ? "Available" : "Currently Unavailable" }}
+          </p>
+        </div>
+        }
+        
+      </div>
+    </div>
+    }
+
+    <!-- Social Section -->
+    @if (siteInfo()?.socialLinks) {
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold text-blue-600 mb-4">Connect With Us</h2>
+      <div class="flex gap-4">
+        @if (siteInfo()?.socialLinks?.facebook) {
+        <a
+          [href]="siteInfo()?.socialLinks?.facebook"
+          target="_blank"
+          class="text-blue-600 hover:text-blue-800 text-2xl"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.twitter) {
+        <a
+          [href]="siteInfo()?.socialLinks?.twitter"
+          target="_blank"
+          class="text-blue-400 hover:text-blue-600 text-2xl"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.instagram) {
+        <a
+          [href]="siteInfo()?.socialLinks?.instagram"
+          target="_blank"
+          class="text-pink-600 hover:text-pink-800 text-2xl"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.linkedin) {
+        <a
+          [href]="siteInfo()?.socialLinks?.linkedin"
+          target="_blank"
+          class="text-blue-700 hover:text-blue-900 text-2xl"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</div>

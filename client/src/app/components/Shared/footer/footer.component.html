@@ -1,0 +1,117 @@
+<!-- footer  -->
+<footer class="bg-white pt-16 pb-12 border-t border-senary">
+  <div class="container grid lg:grid-cols-3 gap-5 lg:gap-32">
+    <!-- footer text -->
+    <div class="col-span-1 space-y-8">
+      <img
+        src="../../../../assets/images/logo.png"
+        class="w-30"
+        alt="logo"
+      />
+      <div class="flex space-x-6">
+        @if (siteInfo()?.socialLinks?.facebook) {
+        <a
+          [href]="siteInfo()?.socialLinks?.facebook"
+          target="_blank"
+          class="text-blue-600 hover:text-blue-800"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.twitter) {
+        <a
+          [href]="siteInfo()?.socialLinks?.twitter"
+          target="_blank"
+          class="text-blue-400 hover:text-blue-600"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.instagram) {
+        <a
+          [href]="siteInfo()?.socialLinks?.instagram"
+          target="_blank"
+          class="text-pink-600 hover:text-pink-800"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        } @if (siteInfo()?.socialLinks?.linkedin) {
+        <a
+          [href]="siteInfo()?.socialLinks?.linkedin"
+          target="_blank"
+          class="text-blue-700 hover:text-blue-900"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        }
+      </div>
+    </div>
+    <!-- footer text end -->
+
+    <!-- footer links -->
+    <div class="col-span-2 grid grid-cols-2 gap-8">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3
+            class="text-sm font-semibold text-quinary uppercase tracking-wider"
+          >
+            support
+          </h3>
+          <div class="mt-4 space-y-4">
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Pricing</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Documentation</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Guides</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >API Status</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3
+            class="text-sm font-semibold text-quinary uppercase tracking-wider"
+          >
+            company
+          </h3>
+          <div class="mt-4 space-y-4">
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >About</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Blog</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Jobs</a
+            >
+            <a
+              href="#"
+              class="text-base text-tertiary hover:text-secondary block"
+              >Press</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer links end -->
+  </div>
+</footer>
+<!-- footer end -->

@@ -1,0 +1,139 @@
+<!-- login -->
+<div class="container py-16">
+  <div
+    class="max-w-lg mx-auto shadow px-6 py-7 rounded overflow-hidden bg-pink-50"
+  >
+    <h2 class="text-2xl uppercase font-medium mb-1">Login</h2>
+    <p class="text-gray-800 mb-6 text-sm">
+      Login if you are a returning customer
+    </p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+      <div class="space-y-4">
+        <div>
+          <label class="text-gray-800 mb-2 block">Email address</label>
+          <input
+            type="email"
+            [formControl]="getControl('email')"
+            [class.invalid]="
+              getControl('email').invalid &&
+              getControl('email').touched &&
+              isSubmitted
+            "
+            class="block w-full border border-gray-300 px-4 py-3 text-gray-800 text-sm rounded focus:ring-0 focus:border-secondary placeholder-gray-400"
+            placeholder="Enter your email address"
+          />
+        </div>
+        <div>
+          <label class="text-gray-800 mb-2 block">Password</label>
+          <input
+            type="password"
+            [formControl]="getControl('password')"
+            [class.invalid]="
+              getControl('password').invalid &&
+              getControl('password').touched &&
+              isSubmitted
+            "
+            class="block w-full border border-gray-300 px-4 py-3 text-gray-800 text-sm rounded focus:ring-0 focus:border-secondary placeholder-gray-400"
+            placeholder="Enter your password"
+          />
+        </div>
+      </div>
+      @if (error) {
+      <div class="flex gap-1 items-center justify-center mt-2 text-red-500">
+        <svg
+          width="16px"
+          height="16px"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            <path
+              d="M12 8V12"
+              stroke="#ff0000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <path
+              d="M12 16.0195V16"
+              stroke="#ff0000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="#ff0000"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></circle>
+          </g>
+        </svg>
+        {{ error }}
+      </div>
+      }
+      <div class="flex items-center justify-between mt-6">
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            id="agreement"
+            class="text-primary focus:ring-0 rounded-sm cursor-pointer"
+          />
+          <label for="agreement" class="text-gray-800 ml-3 cursor-pointer"
+            >Remember me</label
+          >
+        </div>
+        <button routerLink="/change-password" class="text-primary">
+          Forgot password
+        </button>
+      </div>
+      <div class="mt-4">
+        <input
+          type="submit"
+          value="Login"
+          class="block w-full py-2 text-center text-gray-50 bg-primary border border-primary rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
+        />
+      </div>
+    </form>
+
+    <!-- login with -->
+    <div class="mt-6 flex justify-center relative">
+      <div class="text-gray-800 uppercase px-3 bg-pink-50 z-10 relative">
+        Or Login in with
+      </div>
+      <div
+        class="absolute left-0 top-3 w-full border-b-2 border-gray-200"
+      ></div>
+    </div>
+    <div class="flex mt-4 gap-4">
+      <button
+        (click)="loginWithFacebook()"
+        class="w-1/2 py-2 text-center text-gray-50 bg-blue-800 rounded uppercase font-roboto font-medium text-sm hover:bg-blue-700"
+      >
+        Facebook
+      </button>
+      <button
+        (click)="loginWithGoogle()"
+        class="w-1/2 py-2 text-center text-gray-50 hover:bg-orange-500 bg-orange-600 rounded uppercase font-roboto font-medium text-sm"
+      >
+        Google
+      </button>
+    </div>
+    <!-- login with end -->
+    <p class="mt-4 text-gray-800 text-center">
+      Don't have an account?
+      <a routerLink="/register" class="text-primary">Register Now</a>
+    </p>
+  </div>
+</div>
+<!-- login end -->

@@ -1,0 +1,40 @@
+@if (type == "text") {
+<div>
+  <label [for]="inputId" class="text-gray-800 mb-2 block capitalize">
+    {{ label }}
+    @if (isRequired) {<span class="text-primary">*</span>}
+  </label>
+  <input
+    [id]="inputId"
+    [type]="type"
+    [placeholder]="placeholder"
+    [(ngModel)]="value"
+    (ngModelChange)="onValueChange()"
+    class="input-box"
+  />
+</div>
+} @else if (type == "select") {
+<label [for]="inputId" class="text-gray-800 mb-2 block capitalize">
+  {{ label }}
+</label>
+<select
+  [id]="inputId"
+  [(ngModel)]="value"
+  [ngClass]="{
+    'cursor-not-allowed': isDisabled,
+    'cursor-pointer': !isDisabled
+  }"
+  (ngModelChange)="onValueChange()"
+  class="input-box"
+  [disabled]="isDisabled"
+>
+  <option selected disabled hidden value="">
+    {{ defaultPlaceholder }}
+  </option>
+  @for (option of options; track $index) {
+  <option [value]="option?._id">
+    {{ option?.name }}
+  </option>
+  }
+</select>
+}

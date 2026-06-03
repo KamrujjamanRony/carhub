@@ -1,0 +1,41 @@
+<div
+  class="w-full flex items-center justify-between gap-6 p-4 border border-gray-200 rounded"
+>
+  <!-- wishlist image -->
+  <div class="w-28 shrink-0">
+    <img [src]="product?.image" alt="w-full" />
+  </div>
+  <!-- wishlist image end -->
+  <!-- wishlist content -->
+  <div class="w-1/3">
+    <h2
+      class="text-gray-800 text-xl font-medium uppercase cursor-pointer"
+      [routerLink]="getViewLink(product.id)"
+    >
+      {{ product?.name }}
+    </h2>
+    <p class="text-gray-800 text-sm">
+      Availability:
+      <span class="text-green-600">{{ product?.availability }}</span>
+    </p>
+  </div>
+  <!-- wishlist content end -->
+  <div class="flex items-baseline mb-1 space-x-2 font-roboto">
+    <p
+      class="text-xl text-primary font-semibold"
+      [innerHTML]="product?.offerPrice | bdt"
+    ></p>
+    <p
+      class="text-sm text-secondary line-through"
+      [innerHTML]="product?.regularPrice | bdt"
+    ></p>
+  </div>
+  <a
+    (click)="addToCart(product)"
+    class="cursor-not-allowed px-4 py-2 text-center text-gray-50 bg-red-500 border border-red-500 rounded hover:bg-transparent hover:text-primary transition uppercase font-roboto font-medium"
+    >Add to cart</a
+  >
+  <div class="text-gray-800 cursor-pointer hover:text-primary">
+    <i></i>
+  </div>
+</div>

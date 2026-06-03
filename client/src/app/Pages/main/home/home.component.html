@@ -1,0 +1,17 @@
+<section>
+  @if (dataService.isPermitted("Banner")) {
+  <app-carousel />
+  }
+  @if (dataService.isPermitted("Featured Product")) {
+  <app-feature-product />
+  } @if (dataService.isPermitted("Categories")) {
+  <app-categories />
+  } @if (dataService.isPermitted("Products")) {
+  <app-product-wrapper />
+  }   
+  <app-works />
+  <app-hero />
+  @if (dataService.isPermitted("Recommend Section")) {
+  <app-recommend-section />
+  }
+</section>

@@ -1,0 +1,323 @@
+<!-- navbar sm -->
+<section class="bg-secondary md:hidden">
+  <nav class="container mx-auto">
+    <div class="flex items-center justify-between">
+      <!-- all category -->
+      <div class="p-1 flex items-center cursor-pointer relative group">
+        <span class="text-gray-50 text-xl">
+          <i class="fas fa-bars"></i>
+        </span>
+
+        <!-- sub category -->
+        <div
+          class="absolute w-[80vw] left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-50"
+        >
+          <!-- single sub category -->
+          @for (item of categories; track item?.id) {
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ category: item.name }"
+            class="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+          >
+            <span class="ml-6 text-gray-800 text-sm">{{ item?.name }}</span>
+          </a>
+          }
+          <!-- single sub category end -->
+        </div>
+        <!-- sub category end -->
+      </div>
+      <!-- all category end -->
+      <!-- logo -->
+      <a routerLink="/">
+        <img
+          src="../../../../assets/images/logo.png"
+          alt="logo"
+          class="w-32"
+        />
+      </a>
+      <!-- logo end -->
+      <!-- icons -->
+      <div class="flex items-center space-x-4">
+        <a
+          routerLink="/user/wishlist"
+          class="text-center text-gray-50 hover:text-primary transition relative"
+        >
+          <div class="text-md">
+            <i class="fas fa-heart"></i>
+          </div>
+          @if (totalWishlists() > 0) {
+          <span
+            class="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-gray-50 text-[8px]"
+            >{{ totalWishlists() }}</span
+          >
+          }
+        </a>
+        <a
+          routerLink="/user/shopping-cart"
+          class="text-center text-gray-50 hover:text-primary transition relative"
+        >
+          <div class="text-md">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          @if (totalCarts() > 0) {
+          <span
+            class="absolute right-0 -top-1 w-4 h-4 rounded-full flex items-center justify-center bg-primary text-gray-50 text-[8px]"
+            >{{ totalCarts() }}</span
+          >
+          }
+        </a>
+        <a
+          routerLink="/user/profile-info"
+          class="text-center text-gray-50 hover:text-primary transition relative"
+        >
+          <div class="text-md">
+            <i class="fas fa-user"></i>
+          </div>
+        </a>
+      </div>
+      <!-- icons end -->
+    </div>
+    <!-- searchbar -->
+    <div class="relative">
+      <div class="w-full max-w-xl relative flex my-1">
+        <input
+          type="text"
+          [formControl]="searchControl"
+          (focus)="onSearchFocus()"
+          (blur)="onSearchBlur()"
+          class="w-full border border-primary border-r-0 px-2 py-1 rounded-md focus:outline-none mx-2"
+          placeholder="Search cars..."
+        />
+        <button
+          (click)="performSearch()"
+          class="bg-primary text-gray-50 px-4 hover:bg-transparent hover:text-primary transition rounded-md absolute h-full right-1 border-none"
+        >
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <!-- Search results dropdown -->
+      @if (showSearchResults()) {
+      <div
+        class="absolute z-50 w-full max-w-xl bg-white shadow-lg rounded-md mt-1 mx-2 max-h-60 overflow-y-auto"
+      >
+        @for (product of searchResults(); track product.id) {
+        <div
+          (click)="navigateToProduct(product.id)"
+          class="p-3 hover:bg-gray-100 cursor-pointer flex items-center"
+        >
+          <img
+            [src]="product.image"
+            class="w-10 h-10 object-cover mr-3"
+            alt=""
+          />
+          <div>
+            <div class="font-medium">{{ product.name }}</div>
+            <div class="text-sm text-gray-600">
+              {{ product.brand }} - {{ product.category }}
+            </div>
+          </div>
+        </div>
+        } @if (searchResults().length === 0) {
+        <div class="p-3 text-gray-500">No results found</div>
+        }
+      </div>
+      }
+    </div>
+    <!-- searchbar end -->
+    <!-- Menu Bar -->
+    <div class="flex md:hidden items-center justify-between p-1 z-10">
+      <div class="flex items-center space-x-6 capitalize">
+        <a routerLink="/" class="text-gray-50 hover:text-primary transition"
+          >Home</a
+        >
+        <a routerLink="/shop" class="text-gray-50 hover:text-primary transition"
+          >Shop</a
+        >
+        <a
+          routerLink="/about-us"
+          class="text-gray-50 hover:text-primary transition"
+          >About</a
+        >
+      </div>
+    </div>
+    <!-- Menu Bar end -->
+  </nav>
+</section>
+<!-- navbar sm end -->
+
+<!-- navbar lg -->
+<section class="hidden md:block">
+  <!-- header -->
+  <header class="py-4 shadow-sm bg-white">
+    <div class="container flex items-center justify-between">
+      <!-- logo -->
+      <a routerLink="/">
+        <img
+          src="../../../../assets/images/logo.png"
+          alt="logo"
+          class="w-56"
+        />
+      </a>
+      <!-- searchbar -->
+      <div class="w-full max-w-xl relative flex">
+        <span class="absolute left-4 top-3 text-lg text-gray-800">
+          <i class="fas fa-search"></i>
+        </span>
+        <input
+          type="text"
+          [formControl]="searchControl"
+          (focus)="onSearchFocus()"
+          (blur)="onSearchBlur()"
+          class="w-full border border-primary border-r-0 pl-12 py-3 pr-3 rounded-l-md focus:outline-none"
+          placeholder="Search cars..."
+        />
+        <button
+          (click)="performSearch()"
+          class="bg-primary border border-primary text-gray-50 px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"
+        >
+          Search
+        </button>
+      </div>
+      <!-- Search results dropdown -->
+      @if (showSearchResults()) {
+      <div
+        class="absolute top-16 z-50 w-full max-w-xl bg-white shadow-lg rounded-md mt-1 left-1/2 transform -translate-x-1/2 max-h-60 overflow-y-auto"
+      >
+        @for (product of searchResults(); track product.id) {
+        <div
+          (click)="navigateToProduct(product.id)"
+          class="p-3 hover:bg-gray-100 cursor-pointer flex items-center"
+        >
+          <img
+            [src]="product.image"
+            class="w-10 h-10 object-cover mr-3"
+            alt=""
+          />
+          <div>
+            <div class="font-medium">{{ product.name }}</div>
+            <div class="text-sm text-gray-600">
+              {{ product.brand }} - {{ product.category }}
+            </div>
+          </div>
+        </div>
+        } @if (searchResults().length === 0) {
+        <div class="p-3 text-gray-500">No results found</div>
+        }
+      </div>
+      }
+      <!-- icons -->
+      <div class="flex items-center space-x-4">
+        <a
+          routerLink="/user/wishlist"
+          class="text-center text-gray-800 hover:text-primary transition relative"
+        >
+          <div class="text-2xl">
+            <i class="fas fa-heart"></i>
+          </div>
+          <div class="text-xs leading-3">Wish List</div>
+          @if (totalWishlists() > 0) {
+          <span
+            class="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs"
+            >{{ totalWishlists() }}</span
+          >
+          }
+        </a>
+        <a
+          routerLink="/user/shopping-cart"
+          class="text-center text-gray-800 hover:text-primary transition relative"
+        >
+          <div class="text-2xl">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <div class="text-xs leading-3">Shopping Cart</div>
+          @if (totalCarts() > 0) {
+          <span
+            class="absolute right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs"
+            >{{ totalCarts() }}</span
+          >
+          }
+        </a>
+        <a
+          routerLink="/user/profile-info"
+          class="text-center text-gray-800 hover:text-primary transition relative"
+        >
+          <div class="text-2xl">
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="text-xs leading-3">User</div>
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- header end -->
+
+  <!-- navbar lg -->
+  <nav class="bg-secondary">
+    <div class="container flex">
+      <!-- all category -->
+      <div
+        class="px-8 py-4 bg-primary flex items-center cursor-pointer relative group"
+      >
+        <span class="text-gray-50">
+          <i class="fas fa-bars"></i>
+        </span>
+        <span class="capitalize ml-2 text-gray-50">All categories</span>
+
+        <!-- sub category -->
+        <div
+          class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-50"
+        >
+          <!-- single sub category -->
+          @for (item of categories; track item?.id) {
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ category: item.name }"
+            class="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+          >
+            <span class="ml-6 text-gray-800 text-sm">{{ item?.name }}</span>
+          </a>
+          }
+          <!-- single sub category end -->
+        </div>
+        <!-- sub category end -->
+      </div>
+      <!-- all category end -->
+
+      <!-- navbar links -->
+      <div class="flex items-center justify-between flex-grow pl-12">
+        <div class="flex items-center space-x-6 capitalize">
+          <a routerLink="/" class="text-gray-200 hover:text-gray-50 transition"
+            >Home</a
+          >
+          <a
+            routerLink="/shop"
+            class="text-gray-200 hover:text-gray-50 transition"
+            >Shop</a
+          >
+          <a
+            routerLink="/about-us"
+            class="text-gray-200 hover:text-gray-50 transition"
+            >About us</a
+          >
+        </div>
+        @if (user) {
+        <button
+          (click)="logout()"
+          class="text-gray-200 hover:text-gray-50 transition"
+        >
+          LogOut
+        </button>
+        } @else {
+        <a
+          routerLink="/login"
+          class="text-gray-200 hover:text-gray-50 transition"
+          >Login/Register</a
+        >
+        }
+      </div>
+      <!-- navbar links end -->
+    </div>
+  </nav>
+  <!-- navbar lg end -->
+</section>
+<!-- navbar lg end -->

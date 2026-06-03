@@ -1,0 +1,27 @@
+.image-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+}
+
+.zoom {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  display: none;
+  width: 300px; /* Adjust the zoom box size */
+  height: 300px; /* Adjust the zoom box size */
+}
+
+.size-selector input:checked + label {
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+  background-color: rgb(233 30 99 / var(--tw-bg-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}

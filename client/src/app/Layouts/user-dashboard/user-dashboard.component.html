@@ -1,0 +1,26 @@
+<body class="bg-slate-100">
+  <app-navbar />
+  <app-breadcrumbs
+    (click)="isSidebarOpen.set(!isSidebarOpen())"
+    [name]="routePath"
+  />
+  <!-- account wrapper -->
+  <div class="container flex flex-col md:flex-row items-start gap-6 pt-4 pb-16">
+    <!-- sidebar -->
+    @if (isSidebarOpen()) {
+    <div class="col-span-3 w-full max-w-full md:max-w-max">
+      <app-user-sidebar />
+    </div>
+    }
+    <!-- sidebar end -->
+
+    <!-- outlet -->
+    <div class="col-span-9 span-y-4 w-full">
+      <router-outlet></router-outlet>
+    </div>
+    <!-- outlet end -->
+  </div>
+  <!-- account wrapper end -->
+  <app-footer />
+  <app-copyright />
+</body>

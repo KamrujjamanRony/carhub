@@ -1,0 +1,13 @@
+<section>
+  <app-breadcrumbs name="view" />
+  <app-view-images [product]="product" />
+  <app-view-content [product]="product" />
+  <!-- Related products -->
+  <div>
+    <app-related-products
+      [currentProduct]="product"
+      [allProducts]="allProducts"
+    >
+    </app-related-products>
+  </div>
+</section>
