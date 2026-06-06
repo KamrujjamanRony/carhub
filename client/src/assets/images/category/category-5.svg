@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title5 desc5">
+  <title id="title5">Premium Category</title>
+  <desc id="desc5">Luxury car with spotlight and gold accents.</desc>
+  <defs>
+    <linearGradient id="bg5" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg5)"/>
+  <ellipse cx="600" cy="620" rx="360" ry="52" fill="#f59e0b" opacity="0.2"/>
+  <g transform="translate(205 310)">
+    <rect x="120" y="90" rx="35" ry="35" width="620" height="125" fill="#d4af37"/>
+    <path d="M225 90 L325 35 H585 Q665 35 730 90 Z" fill="#facc15"/>
+    <rect x="350" y="52" width="125" height="32" rx="6" fill="#111827" opacity="0.7"/>
+    <rect x="490" y="52" width="110" height="32" rx="6" fill="#111827" opacity="0.7"/>
+    <circle cx="250" cy="220" r="50" fill="#111827"/>
+    <circle cx="250" cy="220" r="21" fill="#fde68a"/>
+    <circle cx="630" cy="220" r="50" fill="#111827"/>
+    <circle cx="630" cy="220" r="21" fill="#fde68a"/>
+  </g>
+  <circle cx="140" cy="125" r="56" fill="#f8fafc" opacity="0.18"/>
+  <text x="70" y="90" font-size="54" font-family="Verdana, sans-serif" fill="#fbbf24" font-weight="700">Premium</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title1 desc1">
+  <title id="title1">SUV Category</title>
+  <desc id="desc1">Stylized SUV silhouette with sky and road background.</desc>
+  <defs>
+    <linearGradient id="sky1" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#87c7ff"/>
+      <stop offset="100%" stop-color="#dff2ff"/>
+    </linearGradient>
+    <linearGradient id="road1" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#3b4252"/>
+      <stop offset="100%" stop-color="#2e3440"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#sky1)"/>
+  <rect y="500" width="1200" height="200" fill="url(#road1)"/>
+  <rect y="590" width="1200" height="10" fill="#e5e9f0" opacity="0.7"/>
+  <g transform="translate(210 300)">
+    <rect x="90" y="80" rx="35" ry="35" width="620" height="140" fill="#0f172a"/>
+    <path d="M190 80 L300 10 H540 Q620 10 680 80 Z" fill="#1f2937"/>
+    <rect x="320" y="28" width="130" height="45" rx="8" fill="#9ad0ff"/>
+    <rect x="465" y="28" width="130" height="45" rx="8" fill="#9ad0ff"/>
+    <circle cx="220" cy="220" r="55" fill="#111827"/>
+    <circle cx="220" cy="220" r="24" fill="#94a3b8"/>
+    <circle cx="600" cy="220" r="55" fill="#111827"/>
+    <circle cx="600" cy="220" r="24" fill="#94a3b8"/>
+  </g>
+  <text x="70" y="90" font-size="54" font-family="Verdana, sans-serif" fill="#0f172a" font-weight="700">SUV</text>
+</svg>

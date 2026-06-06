@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title2 desc2">
+  <title id="title2">Sedan Category</title>
+  <desc id="desc2">Stylized sedan silhouette at sunset.</desc>
+  <defs>
+    <linearGradient id="sky2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffd8a8"/>
+      <stop offset="100%" stop-color="#fff4e6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#sky2)"/>
+  <rect y="520" width="1200" height="180" fill="#3f3f46"/>
+  <g transform="translate(200 325)">
+    <rect x="120" y="75" rx="30" ry="30" width="590" height="120" fill="#7f1d1d"/>
+    <path d="M220 75 L315 20 H560 Q640 20 700 75 Z" fill="#991b1b"/>
+    <rect x="345" y="35" width="130" height="35" rx="7" fill="#e0f2fe"/>
+    <rect x="490" y="35" width="115" height="35" rx="7" fill="#e0f2fe"/>
+    <circle cx="240" cy="200" r="48" fill="#1f2937"/>
+    <circle cx="240" cy="200" r="20" fill="#cbd5e1"/>
+    <circle cx="610" cy="200" r="48" fill="#1f2937"/>
+    <circle cx="610" cy="200" r="20" fill="#cbd5e1"/>
+  </g>
+  <text x="70" y="90" font-size="54" font-family="Verdana, sans-serif" fill="#7f1d1d" font-weight="700">Sedan</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title4 desc4">
+  <title id="title4">Hybrid Category</title>
+  <desc id="desc4">Hybrid car with leaf motif.</desc>
+  <defs>
+    <linearGradient id="bg4" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg4)"/>
+  <rect y="520" width="1200" height="180" fill="#0f172a"/>
+  <g transform="translate(195 320)">
+    <rect x="120" y="80" rx="35" ry="35" width="620" height="130" fill="#0f766e"/>
+    <path d="M220 80 L330 22 H580 Q670 22 730 80 Z" fill="#0d9488"/>
+    <rect x="355" y="36" width="126" height="35" rx="7" fill="#ccfbf1"/>
+    <rect x="495" y="36" width="112" height="35" rx="7" fill="#ccfbf1"/>
+    <circle cx="250" cy="215" r="50" fill="#111827"/>
+    <circle cx="250" cy="215" r="21" fill="#99f6e4"/>
+    <circle cx="630" cy="215" r="50" fill="#111827"/>
+    <circle cx="630" cy="215" r="21" fill="#99f6e4"/>
+  </g>
+  <path d="M980 280 C1050 220, 1110 240, 1120 320 C1030 360, 985 335, 980 280 Z" fill="#86efac"/>
+  <path d="M980 280 C1025 310, 1060 350, 1070 410" stroke="#14532d" stroke-width="8" fill="none"/>
+  <text x="70" y="90" font-size="54" font-family="Verdana, sans-serif" fill="#99f6e4" font-weight="700">Hybrid</text>
+</svg>

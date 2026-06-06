@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { AddSectionComponent } from '../../../components/Home/add-section/add-section.component';
 import { CarouselComponent } from '../../../components/Home/carousel/carousel.component';
 import { CategoriesComponent } from '../../../components/Home/categories/categories.component';
 import { ProductWrapperComponent } from '../../../components/Home/product-wrapper/product-wrapper.component';
@@ -12,7 +11,7 @@ import { WorksComponent } from "../../../components/Home/works/works.component";
 
 @Component({
     selector: 'app-home',
-    imports: [AddSectionComponent, CarouselComponent, CategoriesComponent, ProductWrapperComponent, RecommendSectionComponent, CommonModule, FeatureProductComponent, HeroComponent, WorksComponent],
+    imports: [CarouselComponent, CategoriesComponent, ProductWrapperComponent, RecommendSectionComponent, CommonModule, FeatureProductComponent, HeroComponent, WorksComponent],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
 })

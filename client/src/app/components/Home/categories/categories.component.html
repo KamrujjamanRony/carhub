@@ -5,95 +5,54 @@
   >
     shop by category
   </h2>
-  <div class="grid grid-cols-2 gap-3">
-    @for (item of categories; track $index) {
-    <a
-      [routerLink]="['/shop']"
-      [queryParams]="{ category: item.name }"
-      class="relative rounded-sm overflow-hidden group"
-    >
-      <img [src]="item?.image" class="w-full" alt="" />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >{{ item?.name }}</a
+  <div
+    class="category-slider"
+    (window:resize)="onResize()"
+    [style.--cards-per-view]="cardsPerViewStyle()"
+  >
+    @if (hasSliderControls()) {
+      <button
+        type="button"
+        class="slider-btn slider-btn-left"
+        (click)="prevSlide()"
+        [disabled]="isPrevDisabled()"
+        aria-label="Previous categories"
       >
-    </a>
+        &#10094;
+      </button>
+      <button
+        type="button"
+        class="slider-btn slider-btn-right"
+        (click)="nextSlide()"
+        [disabled]="isNextDisabled()"
+        aria-label="Next categories"
+      >
+        &#10095;
+      </button>
     }
-    <!-- single category -->
-    <!-- <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-1.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Bedroom</a
-      >
+
+    <div class="category-viewport">
+      <div class="category-track" [style.transform]="getTrackTransform()">
+        @for (item of categories(); track $index; let i = $index) {
+          <a
+            [routerLink]="['/shop']"
+            [queryParams]="{ category: item.name }"
+            class="category-card relative rounded-sm overflow-hidden group"
+          >
+            <img
+              [src]="item.image"
+              class="w-full category-image"
+              [alt]="item.name"
+              (error)="onImageError(i)"
+            />
+            <span
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
+              >{{ item.name }}</span
+            >
+          </a>
+        }
+      </div>
     </div>
-    <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-2.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Sofa</a
-      >
-    </div>
-    <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-3.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Office</a
-      >
-    </div>
-    <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-4.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Outdoor</a
-      >
-    </div>
-    <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-5.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Mattress</a
-      >
-    </div>
-    <div class="relative rounded-sm overflow-hidden group">
-      <img
-        src="../../../../assets/images/category/category-6.jpg"
-        class="w-full"
-        alt=""
-      />
-      <a
-        href="#"
-        class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-xl text-gray-50 font-roboto font-medium group-hover:bg-opacity-50 transition"
-        >Dining</a
-      >
-    </div> -->
-    <!-- single category end -->
   </div>
 </div>
 <!-- categories end -->

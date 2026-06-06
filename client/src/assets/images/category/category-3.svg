@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title3 desc3">
+  <title id="title3">Electric Category</title>
+  <desc id="desc3">Electric car with lightning and charging glow.</desc>
+  <defs>
+    <linearGradient id="bg3" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#052e16"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg3)"/>
+  <circle cx="960" cy="140" r="110" fill="#bbf7d0" opacity="0.3"/>
+  <g transform="translate(200 320)">
+    <rect x="120" y="80" rx="35" ry="35" width="620" height="130" fill="#14532d"/>
+    <path d="M220 80 L320 25 H580 Q660 25 710 80 Z" fill="#166534"/>
+    <rect x="350" y="38" width="125" height="35" rx="7" fill="#dcfce7"/>
+    <rect x="490" y="38" width="110" height="35" rx="7" fill="#dcfce7"/>
+    <circle cx="250" cy="215" r="50" fill="#0f172a"/>
+    <circle cx="250" cy="215" r="22" fill="#bbf7d0"/>
+    <circle cx="630" cy="215" r="50" fill="#0f172a"/>
+    <circle cx="630" cy="215" r="22" fill="#bbf7d0"/>
+  </g>
+  <path d="M910 250 L845 345 H900 L835 450" stroke="#fef08a" stroke-width="26" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="70" y="90" font-size="54" font-family="Verdana, sans-serif" fill="#ecfccb" font-weight="700">Electric</text>
+</svg>

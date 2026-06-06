@@ -201,6 +201,19 @@
       "gender": "",
       "dob": "1997-12-08",
       "phoneNumber": "+8801700000001"
+    },
+    {
+      "id": 2,
+      "address": [],
+      "role": "user",
+      "userId": "GyT5xNoPEnadSCzo0Suz64kapAQ2",
+      "email": "kamrujjaman0228@gmail.com",
+      "username": "kamrujjaman0228",
+      "fullname": "Md. Kamrujjaman",
+      "photoURL": "https://graph.facebook.com/1109379393872776/picture",
+      "gender": "",
+      "dob": "1997-12-08",
+      "phoneNumber": ""
     }
   ],
   "products": [
@@ -222,7 +235,11 @@
       ],
       "quantity": 4,
       "sizes": [],
-      "colors": ["Pearl White", "Jet Black", "Silver"],
+      "colors": [
+        "Pearl White",
+        "Jet Black",
+        "Silver"
+      ],
       "specifications": [
         {
           "title": "Performance",
@@ -260,7 +277,11 @@
         }
       ],
       "productDetails": "Hybrid drivetrain. Adaptive cruise control. Lane tracing assist. Excellent resale value.",
-      "relatedProducts": [2, 5, 6],
+      "relatedProducts": [
+        2,
+        5,
+        6
+      ],
       "ratings": [],
       "facebookPost": "https://facebook.com/carhubbd",
       "youtubeLink": "https://youtube.com",
@@ -285,7 +306,11 @@
       ],
       "quantity": 3,
       "sizes": [],
-      "colors": ["Radiant Red", "Modern Steel", "White Orchid"],
+      "colors": [
+        "Radiant Red",
+        "Modern Steel",
+        "White Orchid"
+      ],
       "specifications": [
         {
           "title": "Performance",
@@ -323,7 +348,11 @@
         }
       ],
       "productDetails": "Turbocharged acceleration. Sport seats. Advanced infotainment and safety package.",
-      "relatedProducts": [1, 4, 5],
+      "relatedProducts": [
+        1,
+        4,
+        5
+      ],
       "ratings": []
     },
     {
@@ -344,7 +373,10 @@
       ],
       "quantity": 5,
       "sizes": [],
-      "colors": ["Ocean Blue", "Gun Metallic"],
+      "colors": [
+        "Ocean Blue",
+        "Gun Metallic"
+      ],
       "specifications": [
         {
           "title": "Battery",
@@ -382,7 +414,10 @@
         }
       ],
       "productDetails": "Electric mobility with low maintenance. Great fit for daily commuting and city use.",
-      "relatedProducts": [1, 5],
+      "relatedProducts": [
+        1,
+        5
+      ],
       "ratings": []
     },
     {
@@ -403,7 +438,10 @@
       ],
       "quantity": 2,
       "sizes": [],
-      "colors": ["Mineral White", "Carbon Black"],
+      "colors": [
+        "Mineral White",
+        "Carbon Black"
+      ],
       "specifications": [
         {
           "title": "Powertrain",
@@ -441,7 +479,11 @@
         }
       ],
       "productDetails": "Premium ride quality, luxury interior, advanced driver assists, and powerful straight-six performance.",
-      "relatedProducts": [1, 2, 5],
+      "relatedProducts": [
+        1,
+        2,
+        5
+      ],
       "ratings": []
     },
     {
@@ -462,7 +504,10 @@
       ],
       "quantity": 4,
       "sizes": [],
-      "colors": ["Phantom Black", "Amazon Gray"],
+      "colors": [
+        "Phantom Black",
+        "Amazon Gray"
+      ],
       "specifications": [
         {
           "title": "Performance",
@@ -500,7 +545,12 @@
         }
       ],
       "productDetails": "Excellent practicality, distinctive exterior design, and a feature-rich interior package.",
-      "relatedProducts": [1, 2, 3, 6],
+      "relatedProducts": [
+        1,
+        2,
+        3,
+        6
+      ],
       "ratings": []
     },
     {
@@ -521,7 +571,10 @@
       ],
       "quantity": 6,
       "sizes": [],
-      "colors": ["Graphite Gray", "White Diamond"],
+      "colors": [
+        "Graphite Gray",
+        "White Diamond"
+      ],
       "specifications": [
         {
           "title": "Utility",
@@ -559,7 +612,10 @@
         }
       ],
       "productDetails": "Rugged, capable, and practical for both work and weekend travel.",
-      "relatedProducts": [1, 5],
+      "relatedProducts": [
+        1,
+        5
+      ],
       "ratings": []
     }
   ],
@@ -572,6 +628,17 @@
           "id": "cart-item-1",
           "productId": 1,
           "quantity": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": "GyT5xNoPEnadSCzo0Suz64kapAQ2",
+      "products": [
+        {
+          "id": "7e9e301e-e3f3-4fbc-b451-92ea0ba4ec13",
+          "productId": 1,
+          "quantity": 1
         }
       ]
     }
