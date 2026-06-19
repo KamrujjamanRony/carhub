@@ -1,6 +1,6 @@
 import { Auth } from '@angular/fire/auth';
 import { ChangeDetectorRef, Component, inject, signal } from '@angular/core';
-import { RouterLink, Router } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CartService } from '../../../services/user/cart.service';
 import { WishListService } from '../../../services/user/wish-list.service';
 import { AuthService } from '../../../services/user/auth.service';
@@ -13,7 +13,7 @@ import { of } from 'rxjs';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink, ReactiveFormsModule],
+  imports: [RouterLink, RouterLinkActive, ReactiveFormsModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

@@ -1,0 +1,105 @@
+/* ---- Animated underline for nav links ---- */
+.nav-link {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 2px;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background-color: #e91e63;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ---- Icon hover lift + pop ---- */
+.icon-link {
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-3px);
+}
+
+.icon-link .badge {
+  transition: transform 0.25s ease;
+}
+
+.icon-link:hover .badge {
+  transform: scale(1.15);
+}
+
+/* ---- Category dropdown trigger ---- */
+.category-trigger {
+  transition: filter 0.25s ease, transform 0.25s ease;
+}
+
+.category-trigger:hover {
+  filter: brightness(1.08);
+}
+
+.category-trigger .chevron {
+  transition: transform 0.3s ease;
+}
+
+.category-trigger:hover .chevron {
+  transform: rotate(180deg);
+}
+
+/* ---- Dropdown panel animation ---- */
+.dropdown-panel {
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.group:hover .dropdown-panel {
+  transform: translateY(0);
+}
+
+/* Stagger-friendly item hover */
+.dropdown-item {
+  position: relative;
+  transition: background-color 0.2s ease, padding-left 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  padding-left: 2rem;
+  color: #e91e63;
+}
+
+.dropdown-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #e91e63;
+  transform: scaleY(0);
+  transition: transform 0.2s ease;
+}
+
+.dropdown-item:hover::before {
+  transform: scaleY(1);
+}
+
+/* ---- Search button shimmer ---- */
+.search-btn {
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-btn:hover {
+  box-shadow: 0 4px 14px rgba(233, 30, 99, 0.35);
+}

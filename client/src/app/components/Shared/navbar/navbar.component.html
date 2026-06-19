@@ -127,15 +127,23 @@
     <!-- Menu Bar -->
     <div class="flex md:hidden items-center justify-between p-1 z-10">
       <div class="flex items-center space-x-6 capitalize">
-        <a routerLink="/" class="text-gray-50 hover:text-primary transition"
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="nav-link text-gray-50 hover:text-primary transition"
           >Home</a
         >
-        <a routerLink="/shop" class="text-gray-50 hover:text-primary transition"
+        <a
+          routerLink="/shop"
+          routerLinkActive="active"
+          class="nav-link text-gray-50 hover:text-primary transition"
           >Shop</a
         >
         <a
           routerLink="/about-us"
-          class="text-gray-50 hover:text-primary transition"
+          routerLinkActive="active"
+          class="nav-link text-gray-50 hover:text-primary transition"
           >About</a
         >
       </div>
@@ -173,7 +181,7 @@
         />
         <button
           (click)="performSearch()"
-          class="bg-primary border border-primary text-gray-50 px-8 rounded-r-md hover:bg-transparent hover:text-primary transition"
+          class="search-btn bg-primary border border-primary text-gray-50 px-8 rounded-r-md hover:bg-transparent hover:text-primary"
         >
           Search
         </button>
@@ -206,10 +214,10 @@
       </div>
       }
       <!-- icons -->
-      <div class="flex items-center space-x-4">
+      <div class="flex items-center space-x-6">
         <a
           routerLink="/user/wishlist"
-          class="text-center text-gray-800 hover:text-primary transition relative"
+          class="icon-link text-center text-gray-800 hover:text-primary relative"
         >
           <div class="text-2xl">
             <i class="fas fa-heart"></i>
@@ -217,14 +225,14 @@
           <div class="text-xs leading-3">Wish List</div>
           @if (totalWishlists() > 0) {
           <span
-            class="absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs"
+            class="badge absolute right-0 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs shadow-md"
             >{{ totalWishlists() }}</span
           >
           }
         </a>
         <a
           routerLink="/user/shopping-cart"
-          class="text-center text-gray-800 hover:text-primary transition relative"
+          class="icon-link text-center text-gray-800 hover:text-primary relative"
         >
           <div class="text-2xl">
             <i class="fas fa-shopping-cart"></i>
@@ -232,14 +240,14 @@
           <div class="text-xs leading-3">Shopping Cart</div>
           @if (totalCarts() > 0) {
           <span
-            class="absolute right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs"
+            class="badge absolute right-3 -top-1 w-5 h-5 rounded-full flex items-center justify-center bg-primary text-gray-50 text-xs shadow-md"
             >{{ totalCarts() }}</span
           >
           }
         </a>
         <a
           routerLink="/user/profile-info"
-          class="text-center text-gray-800 hover:text-primary transition relative"
+          class="icon-link text-center text-gray-800 hover:text-primary relative"
         >
           <div class="text-2xl">
             <i class="fas fa-user"></i>
@@ -256,23 +264,26 @@
     <div class="container flex">
       <!-- all category -->
       <div
-        class="px-8 py-4 bg-primary flex items-center cursor-pointer relative group"
+        class="category-trigger px-8 py-4 bg-primary flex items-center cursor-pointer relative group"
       >
         <span class="text-gray-50">
           <i class="fas fa-bars"></i>
         </span>
         <span class="capitalize ml-2 text-gray-50">All categories</span>
+        <span class="chevron ml-3 text-gray-50 text-xs">
+          <i class="fas fa-chevron-down"></i>
+        </span>
 
         <!-- sub category -->
         <div
-          class="absolute w-full left-0 top-full bg-white shadow-md py-3 divide-y divide-gray-300 divide-dashed opacity-0 group-hover:opacity-100 transition duration-300 invisible group-hover:visible z-50"
+          class="dropdown-panel absolute w-full left-0 top-full bg-white shadow-xl rounded-b-md py-3 divide-y divide-gray-200 divide-dashed opacity-0 group-hover:opacity-100 invisible group-hover:visible z-50"
         >
           <!-- single sub category -->
           @for (item of categories; track item?.id) {
           <a
             [routerLink]="['/shop']"
             [queryParams]="{ category: item.name }"
-            class="flex items-center px-6 py-3 hover:bg-gray-100 transition"
+            class="dropdown-item flex items-center px-6 py-3 hover:bg-gray-50"
           >
             <span class="ml-6 text-gray-800 text-sm">{{ item?.name }}</span>
           </a>
@@ -285,32 +296,39 @@
 
       <!-- navbar links -->
       <div class="flex items-center justify-between flex-grow pl-12">
-        <div class="flex items-center space-x-6 capitalize">
-          <a routerLink="/" class="text-gray-200 hover:text-gray-50 transition"
+        <div class="flex items-center space-x-8 capitalize">
+          <a
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="nav-link text-gray-200 hover:text-gray-50 transition"
             >Home</a
           >
           <a
             routerLink="/shop"
-            class="text-gray-200 hover:text-gray-50 transition"
+            routerLinkActive="active"
+            class="nav-link text-gray-200 hover:text-gray-50 transition"
             >Shop</a
           >
           <a
             routerLink="/about-us"
-            class="text-gray-200 hover:text-gray-50 transition"
+            routerLinkActive="active"
+            class="nav-link text-gray-200 hover:text-gray-50 transition"
             >About us</a
           >
         </div>
         @if (user) {
         <button
           (click)="logout()"
-          class="text-gray-200 hover:text-gray-50 transition"
+          class="nav-link text-gray-200 hover:text-gray-50 transition"
         >
           LogOut
         </button>
         } @else {
         <a
           routerLink="/login"
-          class="text-gray-200 hover:text-gray-50 transition"
+          routerLinkActive="active"
+          class="nav-link text-gray-200 hover:text-gray-50 transition"
           >Login/Register</a
         >
         }
